@@ -61,7 +61,7 @@
         font-family: "Cairo";
         font-style: normal;
         font-weight: 400 900;
-        font-display: fallback;
+        font-display: block;
         src: url("media/fonts/cairo-arabic.woff2") format("woff2");
         unicode-range:
           U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1,
@@ -169,7 +169,8 @@
         top: 0;
         z-index: 1000;
         border-bottom: 1px solid var(--border);
-        transition: all 0.35s ease;
+        will-change: backdrop-filter;
+        transition: box-shadow 0.35s ease, padding 0.35s ease;
         gap: 16px;
         flex-wrap: wrap;
       }
@@ -242,7 +243,7 @@
         font-size: 0.95rem;
         font-family: "Cairo", sans-serif;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 4px 16px var(--primary-glow);
         white-space: nowrap;
       }
@@ -270,7 +271,7 @@
         height: 3px;
         background: var(--light-text);
         border-radius: 3px;
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
         position: relative;
         flex-shrink: 0;
       }
@@ -308,6 +309,7 @@
           opacity 0.4s ease,
           visibility 0s 0.5s;
         border-bottom: 1px solid var(--border);
+        will-change: backdrop-filter;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
@@ -431,7 +433,7 @@
         max-width: 100%;
         object-fit: contain;
         filter: drop-shadow(0 8px 10px rgba(226, 147, 209, 0.4));
-        animation: floatLogo 4s ease-in-out infinite;
+        animation: floatLogo 4s ease-in-out 1;
       }
       @keyframes floatLogo {
         0%,
@@ -498,7 +500,7 @@
         font-family: "Cairo", sans-serif;
         border: none;
         cursor: pointer;
-        transition: all 0.35s ease;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       }
       .cta-primary:hover {
@@ -515,7 +517,7 @@
         font-size: 1.05rem;
         font-family: "Cairo", sans-serif;
         cursor: pointer;
-        transition: all 0.35s ease;
+        transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
       }
       .cta-secondary:hover {
         background: rgba(255, 255, 255, 0.12);

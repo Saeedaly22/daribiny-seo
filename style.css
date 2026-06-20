@@ -107,7 +107,8 @@ body {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border);
-  transition: all 0.35s ease;
+  will-change: backdrop-filter;
+  transition: box-shadow 0.35s ease, padding 0.35s ease;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -180,7 +181,7 @@ body {
   font-size: 0.95rem;
   font-family: "Cairo", sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 16px var(--primary-glow);
   white-space: nowrap;
 }
@@ -210,7 +211,7 @@ body {
   height: 3px;
   background: var(--light-text);
   border-radius: 3px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
   position: relative;
   flex-shrink: 0;
 }
@@ -250,6 +251,7 @@ body {
     opacity 0.4s ease,
     visibility 0s 0.5s;
   border-bottom: 1px solid var(--border);
+  will-change: backdrop-filter;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
@@ -374,7 +376,7 @@ body {
   max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 10px rgba(226, 147, 209, 0.4));
-  animation: floatLogo 4s ease-in-out infinite;
+  animation: floatLogo 4s ease-in-out 1;
 }
 @keyframes floatLogo {
   0%,
@@ -444,7 +446,7 @@ body {
   font-family: "Cairo", sans-serif;
   border: none;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 .cta-primary:hover {
@@ -461,7 +463,7 @@ body {
   font-size: 1.05rem;
   font-family: "Cairo", sans-serif;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
 }
 .cta-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -619,7 +621,7 @@ h2 {
   padding: 38px 28px;
   border-radius: var(--radius);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
 }
 .about-item:hover {
   background: var(--white);
@@ -637,7 +639,7 @@ h2 {
   justify-content: center;
   margin: 0 auto 22px;
   font-size: 24px;
-  transition: all 0.35s;
+  transition: background 0.35s, color 0.35s, box-shadow 0.35s;
 }
 .about-item .icon-wrap {
   background: var(--bg-soft);
@@ -832,7 +834,7 @@ h2 {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
   position: relative;
   overflow: hidden;
 }
@@ -867,7 +869,7 @@ h2 {
   margin: 0 auto 22px;
   font-size: 26px;
   color: var(--primary-dark);
-  transition: all 0.35s;
+  transition: background 0.35s, color 0.35s, box-shadow 0.35s;
 }
 .card:hover .icon-wrap {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
@@ -890,7 +892,7 @@ h2 {
   padding: 40px 28px;
   border-radius: var(--radius);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .step:hover {
   border-color: var(--primary);
@@ -928,7 +930,7 @@ h2 {
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1025,7 +1027,7 @@ h2 {
   font-size: 1rem;
   font-family: "Cairo", sans-serif;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 6px 20px var(--primary-glow);
 }
 .btn-course:hover {
@@ -1048,7 +1050,7 @@ h2 {
   padding: 38px 28px;
   border-radius: var(--radius);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .safety-item:hover {
   border-color: var(--primary);
@@ -1077,7 +1079,7 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .faq-item.active {
   border-color: var(--primary);
@@ -1108,7 +1110,7 @@ h2 {
   justify-content: center;
   color: var(--primary-dark);
   flex-shrink: 0;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
   font-size: 0.75rem;
 }
 .faq-item.active .faq-arrow {
@@ -1167,7 +1169,7 @@ h2 {
   padding: 32px 28px;
   border-radius: var(--radius);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .contact-item .phone-number {
   unicode-bidi: bidi-override;
@@ -1193,7 +1195,7 @@ h2 {
   margin: 0 auto 18px;
   font-size: 24px;
   box-shadow: 0 8px 24px var(--primary-glow);
-  transition: all 0.35s;
+  transition: transform 0.35s;
 }
 .contact-item:hover .icon-wrap {
   transform: scale(1.08);
@@ -1216,7 +1218,7 @@ h2 {
   border-radius: var(--radius);
   padding: 32px 28px;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
