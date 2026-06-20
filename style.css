@@ -1349,7 +1349,7 @@ h2 {
 /* ── FOOTER ──────────────────────────── */
 footer {
   background: #0d0514;
-  color: #c0a8cc;
+  color: #c8b0d4;
   padding: 64px 20px 36px;
   text-align: center;
 }
@@ -1362,11 +1362,10 @@ footer {
   width: auto;
   object-fit: contain;
   margin-bottom: 0px;
-  opacity: 0.85;
 }
 .footer-tagline {
   font-size: 0.93rem;
-  opacity: 0.5;
+  color: #dcc8e4;
   margin-bottom: 24px;
 }
 .footer-links {
@@ -1377,7 +1376,7 @@ footer {
   margin-bottom: 20px;
 }
 .footer-links a {
-  color: #c0a8cc;
+  color: #dcc8e4;
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.25s;
@@ -1389,11 +1388,16 @@ footer {
 .footer-links a:hover {
   color: var(--primary-light);
 }
+.footer-links a:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 .footer-copy {
   font-size: 0.84rem;
-  opacity: 0.55;
+  color: #c8b0d4;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* ── HERO SMALL (Privacy) ────────────── */

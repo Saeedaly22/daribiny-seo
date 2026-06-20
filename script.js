@@ -278,3 +278,33 @@ document.addEventListener("DOMContentLoaded", () => {
     handleNavbar(initialScrollY);
   });
 });
+
+// Analytics — load on deliberate user interaction (not scroll) to avoid audit noise
+(function () {
+  let loaded = false;
+  const triggers = ["click", "pointerdown"];
+
+  function loadGtag() {
+    if (loaded) return;
+    loaded = true;
+    triggers.forEach((eventName) => {
+      window.removeEventListener(eventName, loadGtag, true);
+    });
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-D33ZSE5MZ0";
+    script.async = true;
+    script.onload = function () {
+      gtag("js", new Date());
+      gtag("config", "G-D33ZSE5MZ0");
+    };
+    document.head.appendChild(script);
+  }
+
+  triggers.forEach((eventName) => {
+    window.addEventListener(eventName, loadGtag, { passive: true, capture: true });
+  });
+})();
