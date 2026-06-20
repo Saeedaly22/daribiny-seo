@@ -110,84 +110,16 @@ function animateCounter(counter) {
   requestAnimationFrame(update);
 }
 
+function runWhenIdle(fn) {
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(fn, { timeout: 2000 });
+  } else {
+    setTimeout(fn, 1);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Read geometric properties FIRST, before any DOM writes (avoids forced reflow)
-  const initialScrollY = window.scrollY;
-
-  // ── All DOM writes are batched after reads ──
-
   updateCopyrightYear();
-
-  // Exclude privacy-content from scroll reveal so it's visible immediately
-  document.querySelectorAll("section:not(.hero):not(.hero-small):not(.privacy-content), .stats-bar").forEach((el) => {
-    if (!el.classList.contains("reveal")) el.classList.add("reveal");
-  });
-
-  // ── Scroll reveal ──
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 },
-  );
-
-  document.querySelectorAll(".reveal").forEach((el) => {
-    revealObserver.observe(el);
-  });
-
-  // ── Stats counter trigger ──
-  const counterObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 },
-  );
-
-  document.querySelectorAll(".stat-number[data-target]").forEach((counter) => {
-    counterObserver.observe(counter);
-  });
-
-  // ── QR & contact animation ──
-  const qrObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("qr-visible");
-          entry.target.classList.remove("qr-hidden");
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  document.querySelectorAll(".qr-card, .contact-item").forEach((el) => {
-    el.classList.add("qr-hidden");
-    qrObserver.observe(el);
-  });
-
-  // ── Navbar scroll listener (avoid forced reflow: read scrollY outside rAF) ──
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        handleNavbar(y);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-  handleNavbar(initialScrollY);
 
   // ── FAQ click & keyboard support ──
   document.querySelectorAll(".faq-question").forEach((q) => {
@@ -269,5 +201,80 @@ document.addEventListener("DOMContentLoaded", () => {
         first.focus();
       }
     }
+  });
+
+  runWhenIdle(() => {
+    const initialScrollY = window.scrollY;
+
+    // Exclude privacy-content from scroll reveal so it's visible immediately
+    document.querySelectorAll("section:not(.hero):not(.hero-small):not(.privacy-content), .stats-bar").forEach((el) => {
+      if (!el.classList.contains("reveal")) el.classList.add("reveal");
+    });
+
+    // ── Scroll reveal ──
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // ── Stats counter trigger ──
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    document.querySelectorAll(".stat-number[data-target]").forEach((counter) => {
+      counterObserver.observe(counter);
+    });
+
+    // ── QR & contact animation ──
+    const qrObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("qr-visible");
+            entry.target.classList.remove("qr-hidden");
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    document.querySelectorAll(".qr-card, .contact-item").forEach((el) => {
+      el.classList.add("qr-hidden");
+      qrObserver.observe(el);
+    });
+
+    // ── Navbar scroll listener ──
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleNavbar(y);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+    handleNavbar(initialScrollY);
   });
 });

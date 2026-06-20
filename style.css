@@ -1,4 +1,4 @@
-/* Font is loaded via <link> in HTML — no duplicate @import needed */
+/* Font is self-hosted via @font-face in HTML critical CSS */
 
 /* ── SVG ICONS ──────────────────────── */
 .icon {
