@@ -121,9 +121,15 @@ body {
   text-decoration: none;
   z-index: 10;
 }
+.logo {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+}
 .logo img {
   height: 110px;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   transition:
     transform 0.3s ease,
@@ -359,11 +365,16 @@ body {
   margin: 0 auto;
 }
 .hero-logo {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 .hero-logo img {
   height: 200px;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 10px rgba(226, 147, 209, 0.4));
   animation: floatLogo 4s ease-in-out infinite;

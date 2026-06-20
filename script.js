@@ -1,12 +1,31 @@
 let pendingScroll = false;
-function handleNavbar() {
+function handleNavbar(scrollY) {
   if (pendingScroll) return;
   pendingScroll = true;
   requestAnimationFrame(() => {
     const navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 80);
+    if (navbar) navbar.classList.toggle("scrolled", scrollY > 80);
     pendingScroll = false;
   });
+}
+
+let scrollLockY = 0;
+function lockBodyScroll(lock) {
+  if (lock) {
+    scrollLockY = window.scrollY;
+    document.body.style.top = -scrollLockY + "px";
+    document.body.style.position = "fixed";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  } else {
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollLockY);
+  }
 }
 
 function toggleMenu() {
@@ -19,15 +38,11 @@ function toggleMenu() {
   mobileMenu.classList.toggle("active");
 
   if (isOpening) {
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.overflow = "hidden";
-    document.documentElement.style.paddingInlineEnd = scrollbarWidth + "px";
-    // Focus first link in mobile menu for keyboard users
+    lockBodyScroll(true);
     const firstLink = mobileMenu.querySelector("nav a");
     if (firstLink) firstLink.focus();
   } else {
-    document.documentElement.style.overflow = "";
-    document.documentElement.style.paddingInlineEnd = "";
+    lockBodyScroll(false);
   }
 }
 
@@ -38,8 +53,7 @@ function closeMenu() {
   if (mobileMenu.classList.contains("active")) {
     hamburger.classList.remove("active");
     mobileMenu.classList.remove("active");
-    document.documentElement.style.overflow = "";
-    document.documentElement.style.paddingInlineEnd = "";
+    lockBodyScroll(false);
   }
 }
 
@@ -175,18 +189,19 @@ document.addEventListener("DOMContentLoaded", () => {
     qrObserver.observe(el);
   });
 
-  // ── Navbar scroll listener (throttled via rAF) ──
+  // ── Navbar scroll listener (avoid forced reflow: read scrollY outside rAF) ──
   let ticking = false;
   window.addEventListener("scroll", () => {
+    const y = window.scrollY;
     if (!ticking) {
       requestAnimationFrame(() => {
-        handleNavbar();
+        handleNavbar(y);
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
-  handleNavbar();
+  handleNavbar(window.scrollY);
 
   // ── FAQ click & keyboard support ──
   document.querySelectorAll(".faq-question").forEach((q) => {
