@@ -123,10 +123,6 @@ body {
   gap: 10px;
   text-decoration: none;
   z-index: 10;
-}
-.logo {
-  display: flex;
-  align-items: center;
   flex-shrink: 0;
 }
 .logo img {
