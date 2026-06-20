@@ -41,6 +41,9 @@
 }
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px;
 }
 
 body {
@@ -975,7 +978,7 @@ h2 {
 }
 .course-meta span .icon {
   color: var(--primary-dark);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
 }
 .course-price {
   font-size: 1.7rem;
@@ -1110,7 +1113,7 @@ h2 {
   color: var(--primary-dark);
   flex-shrink: 0;
   transition: all 0.35s ease;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
 }
 .faq-item.active .faq-arrow {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
@@ -1364,7 +1367,7 @@ footer {
   margin-bottom: 0px;
 }
 .footer-tagline {
-  font-size: 0.93rem;
+  font-size: 1rem;
   color: #dcc8e4;
   margin-bottom: 24px;
 }
@@ -1378,7 +1381,7 @@ footer {
 .footer-links a {
   color: #dcc8e4;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: color 0.25s;
   display: inline-flex;
   align-items: center;
@@ -1394,7 +1397,7 @@ footer {
   border-radius: 4px;
 }
 .footer-copy {
-  font-size: 0.84rem;
+  font-size: 0.875rem;
   color: #c8b0d4;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
