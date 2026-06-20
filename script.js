@@ -111,6 +111,11 @@ function animateCounter(counter) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Read geometric properties FIRST, before any DOM writes (avoids forced reflow)
+  const initialScrollY = window.scrollY;
+
+  // ── All DOM writes are batched after reads ──
+
   updateCopyrightYear();
 
   // Exclude privacy-content from scroll reveal so it's visible immediately
@@ -182,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ticking = true;
     }
   }, { passive: true });
-  handleNavbar(window.scrollY);
+  handleNavbar(initialScrollY);
 
   // ── FAQ click & keyboard support ──
   document.querySelectorAll(".faq-question").forEach((q) => {
