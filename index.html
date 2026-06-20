@@ -39,28 +39,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
       /* Critical CSS — Above‑the‑fold only (Navbar + Hero) */
-      .icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:middle;flex-shrink:0}:root{--primary:#c970ba;--primary-light:#e293d1;--primary-dark:#9b4d90;--primary-glow:rgba(226,147,209,0.22);--accent:#c9a84c;--text:#1a0f1e;--light-text:#4b5563;--muted-text:#6b7280;--bg:#fdfaff;--bg-soft:#faf3ff;--bg-card:#fff;--border:#edd8f0;--white:#fff;--shadow-sm:0 4px 16px rgba(201,112,186,0.1);--shadow-md:0 12px 36px rgba(201,112,186,0.18);--shadow-lg:0 24px 64px rgba(201,112,186,0.24);--radius-sm:14px;--radius:20px;--radius-lg:28px}*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:"Cairo",sans-serif;background:var(--bg);color:var(--text);direction:rtl;line-height:1.75;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}.cta-primary:focus-visible,.cta-secondary:focus-visible,.btn-course:focus-visible{outline-offset:3px;outline-color:var(--accent)}.skip-link{position:fixed;top:-100%;right:16px;z-index:10000;background:var(--primary-dark);color:#fff;padding:12px 24px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:1rem;text-decoration:none;transition:top .25s ease}.skip-link:focus{top:0}.container{max-width:1180px;margin:0 auto;padding:0 24px}.navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border);transition:all .35s ease;gap:16px;flex-wrap:wrap}.navbar.scrolled{padding:8px 5%;box-shadow:0 6px 28px rgba(201,112,186,0.14)}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;z-index:10;aspect-ratio:1/1}.logo img{height:110px;width:auto;max-width:100%;object-fit:contain;transition:transform .3s ease,height .3s ease}.logo img:hover{transform:scale(1.04)}.desktop-nav{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}.desktop-nav a{text-decoration:none;color:var(--light-text);font-weight:600;font-size:.95rem;transition:color .25s;position:relative;padding-bottom:1px}.desktop-nav a:after{content:"";position:absolute;bottom:0;right:0;width:0;height:2px;background:var(--primary);border-radius:2px;transition:width .3s ease}.desktop-nav a:hover{color:var(--primary)}.desktop-nav a:hover:after{width:100%}.cta{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border:none;padding:11px 26px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"Cairo",sans-serif;cursor:pointer;transition:all .3s ease;box-shadow:0 4px 16px var(--primary-glow);white-space:nowrap}.cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--primary-glow)}.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;cursor:pointer;z-index:20;background:none;border:none;padding:0}.hamburger span{display:block;width:28px;height:3px;background:var(--light-text);border-radius:3px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;flex-shrink:0}.hamburger.active span:first-child{transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0;transform:scale(.2)}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}.mobile-menu{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(255,255,255,0.98);-webkit-backdrop-filter:blur(25px);backdrop-filter:blur(25px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:90px 20px 40px;gap:28px;z-index:999;visibility:hidden;opacity:0;transform:translateY(-100%);transition:transform .5s cubic-bezier(.32,.72,0,1),opacity .4s ease,visibility 0s .5s;border-bottom:1px solid var(--border);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}.mobile-menu.active{visibility:visible;opacity:1;transform:translateY(0);transition:transform .5s cubic-bezier(.32,.72,0,1),opacity .4s ease,visibility 0s 0s}.mobile-menu nav{flex-direction:column;gap:28px;align-items:center;display:flex}.mobile-menu nav a{font-size:1.35rem;padding:8px 0;text-decoration:none;color:var(--text);font-weight:700}.mobile-menu .cta{padding:14px 36px;font-size:1.1rem;margin-top:16px}@media(max-width:992px){.hamburger{display:flex}.desktop-nav,.desktop-cta{display:none}.logo img{height:85px}.navbar{padding:10px 5%}}@media(max-width:480px){.navbar{padding:5px 3%}.logo img{height:75px}.mobile-menu{gap:24px}.mobile-menu nav a{font-size:1.25rem}}.hero{background:linear-gradient(155deg,#12051a 0%,#2d1040 35%,#5c2272 65%,#c970ba 100%);color:#fff;padding:100px 20px 130px;text-align:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 30%,rgba(226,147,209,0.12) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(201,112,186,0.1) 0%,transparent 60%),url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}.hero:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:90px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}.hero-content{position:relative;z-index:1;max-width:820px;margin:0 auto}.hero-logo{margin-bottom:10px}.hero-logo{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;margin-bottom:10px}.hero-logo img{height:200px;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(226,147,209,0.4));animation:floatLogo 4s ease-in-out infinite}@keyframes floatLogo{0%,to{transform:translateY(0)}50%{transform:translateY(-10px)}}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);padding:8px 20px;border-radius:50px;font-size:.88rem;font-weight:600;margin-bottom:28px;backdrop-filter:blur(8px)}.hero-badge .icon{color:var(--accent);font-size:.85rem}.hero-content h1{font-size:3.6rem;font-weight:900;line-height:1.2;margin-bottom:22px;text-shadow:0 4px 24px rgba(0,0,0,0.3)}.highlight{color:#f0c8eb;text-shadow:0 0 40px rgba(226,147,209,0.5)}.highlight-soft{color:#d4a8cf}.hero-subtitle{font-size:1.2rem;max-width:640px;margin:0 auto 48px;opacity:.88;line-height:1.9}.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:54px}.cta-primary{background:#fff;color:var(--primary-dark);padding:16px 44px;border-radius:50px;font-weight:800;font-size:1.05rem;font-family:"Cairo",sans-serif;border:none;cursor:pointer;transition:all .35s ease;box-shadow:0 8px 32px rgba(0,0,0,0.2)}.cta-primary:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}.cta-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);padding:16px 44px;border-radius:50px;font-weight:700;font-size:1.05rem;font-family:"Cairo",sans-serif;cursor:pointer;transition:all .35s ease}.cta-secondary:hover{background:rgba(255,255,255,0.12);border-color:#fff}.cta-secondary .icon{margin-left:8px;font-size:.85em}.trust-badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.trust-badges div{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:10px 20px;border-radius:50px;font-size:.9rem;font-weight:600}.trust-badges div .icon{color:var(--accent)}
+      .icon{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:middle;flex-shrink:0}:root{--primary:#c970ba;--primary-light:#e293d1;--primary-dark:#9b4d90;--primary-glow:rgba(226,147,209,0.22);--accent:#c9a84c;--text:#1a0f1e;--light-text:#4b5563;--muted-text:#6b7280;--bg:#fdfaff;--bg-soft:#faf3ff;--bg-card:#fff;--border:#edd8f0;--white:#fff;--shadow-sm:0 4px 16px rgba(201,112,186,0.1);--shadow-md:0 12px 36px rgba(201,112,186,0.18);--shadow-lg:0 24px 64px rgba(201,112,186,0.24);--radius-sm:14px;--radius:20px;--radius-lg:28px}*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:"Cairo",sans-serif;background:var(--bg);color:var(--text);direction:rtl;line-height:1.75;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;min-height:100vh}:focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:4px}.cta-primary:focus-visible,.cta-secondary:focus-visible,.btn-course:focus-visible{outline-offset:3px;outline-color:var(--accent)}.skip-link{position:fixed;top:-100%;right:16px;z-index:10000;background:var(--primary-dark);color:#fff;padding:12px 24px;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;font-size:1rem;text-decoration:none;transition:top .25s ease}.skip-link:focus{top:0}.container{max-width:1180px;margin:0 auto;padding:0 24px}.navbar{display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border);transition:all .35s ease;gap:16px;flex-wrap:wrap}.navbar.scrolled{padding:8px 5%;box-shadow:0 6px 28px rgba(201,112,186,0.14)}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;z-index:10;flex-shrink:0}.logo img{height:110px;width:auto;object-fit:contain;transition:transform .3s ease,height .3s ease}.logo img:hover{transform:scale(1.04)}.desktop-nav{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}.desktop-nav a{text-decoration:none;color:var(--light-text);font-weight:600;font-size:.95rem;transition:color .25s;position:relative;padding-bottom:1px}.desktop-nav a:after{content:"";position:absolute;bottom:0;right:0;width:0;height:2px;background:var(--primary);border-radius:2px;transition:width .3s ease}.desktop-nav a:hover{color:var(--primary)}.desktop-nav a:hover:after{width:100%}.cta{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;border:none;padding:11px 26px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"Cairo",sans-serif;cursor:pointer;transition:all .3s ease;box-shadow:0 4px 16px var(--primary-glow);white-space:nowrap}.cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--primary-glow)}.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;cursor:pointer;z-index:20;background:none;border:none;padding:0}.hamburger span{display:block;width:28px;height:3px;background:var(--light-text);border-radius:3px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;flex-shrink:0}.hamburger.active span:first-child{transform:rotate(45deg) translate(5px,5px)}.hamburger.active span:nth-child(2){opacity:0;transform:scale(.2)}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}.mobile-menu{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(255,255,255,0.98);-webkit-backdrop-filter:blur(25px);backdrop-filter:blur(25px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:90px 20px 40px;gap:28px;z-index:999;visibility:hidden;opacity:0;transform:translateY(-100%);transition:transform .5s cubic-bezier(.32,.72,0,1),opacity .4s ease,visibility 0s .5s;border-bottom:1px solid var(--border);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}.mobile-menu.active{visibility:visible;opacity:1;transform:translateY(0);transition:transform .5s cubic-bezier(.32,.72,0,1),opacity .4s ease,visibility 0s 0s}.mobile-menu nav{flex-direction:column;gap:28px;align-items:center;display:flex}.mobile-menu nav a{font-size:1.35rem;padding:8px 0;text-decoration:none;color:var(--text);font-weight:700}.mobile-menu .cta{padding:14px 36px;font-size:1.1rem;margin-top:16px}@media(max-width:992px){.hamburger{display:flex}.desktop-nav,.desktop-cta{display:none}.logo img{height:85px}.navbar{padding:10px 5%}}@media(max-width:480px){.navbar{padding:5px 3%}.logo img{height:75px}.mobile-menu{gap:24px}.mobile-menu nav a{font-size:1.25rem}}.hero{background:linear-gradient(155deg,#12051a 0%,#2d1040 35%,#5c2272 65%,#c970ba 100%);color:#fff;padding:100px 20px 130px;text-align:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 30%,rgba(226,147,209,0.12) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(201,112,186,0.1) 0%,transparent 60%),url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}.hero:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:90px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}.hero-content{position:relative;z-index:1;max-width:820px;margin:0 auto}.hero-logo{margin-bottom:10px}.hero-logo{display:flex;align-items:center;justify-content:center;margin-bottom:10px}.hero-logo img{height:200px;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(226,147,209,0.4));animation:floatLogo 4s ease-in-out infinite}@keyframes floatLogo{0%,to{transform:translateY(0)}50%{transform:translateY(-10px)}}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);padding:8px 20px;border-radius:50px;font-size:.88rem;font-weight:600;margin-bottom:28px;backdrop-filter:blur(8px)}.hero-badge .icon{color:var(--accent);font-size:.85rem}.hero-content h1{font-size:3.6rem;font-weight:900;line-height:1.2;margin-bottom:22px;text-shadow:0 4px 24px rgba(0,0,0,0.3)}.highlight{color:#f0c8eb;text-shadow:0 0 40px rgba(226,147,209,0.5)}.highlight-soft{color:#d4a8cf}.hero-subtitle{font-size:1.2rem;max-width:640px;margin:0 auto 48px;opacity:.88;line-height:1.9}.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:54px}.cta-primary{background:#fff;color:var(--primary-dark);padding:16px 44px;border-radius:50px;font-weight:800;font-size:1.05rem;font-family:"Cairo",sans-serif;border:none;cursor:pointer;transition:all .35s ease;box-shadow:0 8px 32px rgba(0,0,0,0.2)}.cta-primary:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.3)}.cta-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);padding:16px 44px;border-radius:50px;font-weight:700;font-size:1.05rem;font-family:"Cairo",sans-serif;cursor:pointer;transition:all .35s ease}.cta-secondary:hover{background:rgba(255,255,255,0.12);border-color:#fff}.cta-secondary .icon{margin-left:8px;font-size:.85em}.trust-badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.trust-badges div{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(8px);padding:10px 20px;border-radius:50px;font-size:.9rem;font-weight:600}.trust-badges div .icon{color:var(--accent)}
     </style>
 
-    <!-- Deferred: style.css (non‑render‑blocking) -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Deferred: style.css (غير معيق للعرض) -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <!-- Deferred: Google Fonts (non‑render‑blocking) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=optional" rel="stylesheet">
-    </noscript>
+    <!-- Google Fonts - نحمل مباشرة عشان ما يصير CLS من font swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Deferred: Font Awesome (non‑render‑blocking) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    </noscript>
-
-    <link rel="preload" as="image" href="media/Logo.gif" fetchpriority="high" />
-    <link rel="preload" as="image" href="media/videoCover.webp" fetchpriority="low" />
-    <link rel="preload" href="script.js" as="script" />
+    <link rel="preload" as="image" href="media/hero-logo.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="media/videoCover-480w.webp" fetchpriority="low" />
     
     <script type="application/ld+json">
     {
@@ -197,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
     <header class="navbar">
       <a class="logo" href="#">
-        <img src="media/Logo.gif" alt="دربيني - منصة تعلم القيادة للنساء" width="1080" height="1080" />
+        <img src="media/nav-logo.webp" srcset="media/nav-logo.webp 110w" sizes="110px" alt="دربيني - منصة تعلم القيادة للنساء" width="110" height="110" />
       </a>
       <nav class="desktop-nav" aria-label="القائمة الرئيسية">
         <a href="#about">عن التطبيق</a>
@@ -239,7 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <section class="hero">
       <div class="hero-content">
         <div class="hero-logo">
-          <img src="media/Logo.gif" alt="شعار دربيني" width="1080" height="1080" fetchpriority="high" />
+          <img src="media/hero-logo.webp" srcset="media/hero-logo.webp 200w, media/hero-logo-400w.webp 400w" sizes="200px" alt="شعار دربيني" width="200" height="200" fetchpriority="high" />
         </div>
         <div class="hero-badge">
           <svg class="icon fa-award" aria-hidden="true"><use href="#fa-award"/></svg>
@@ -309,7 +299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="video-wrapper">
           <div class="video-container">
-            <video controls poster="media/videoCover.webp" preload="none" playsinline width="480" height="854">
+            <video controls poster="media/videoCover-480w.webp" preload="none" playsinline width="480" height="854">
               <source src="media/driving-preview.mp4" type="video/mp4" />
               متصفحك لا يدعم تشغيل الفيديو
             </video>
@@ -386,9 +376,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gallery-grid">
           <div class="gallery-item">
             <picture>
-              <source srcset="media/img1.webp" type="image/webp" />
+              <source srcset="media/img1-336w.webp 336w, media/img1-672w.webp 672w, media/img1.webp 1024w" type="image/webp" sizes="(max-width: 768px) calc(100vw - 28px), (max-width: 992px) calc(50vw - 18px), calc(33vw - 24px)" />
               <img
                 src="media/img1.jpg"
+                srcset="media/img1-336w.webp 336w, media/img1-672w.webp 672w, media/img1.webp 1024w"
                 alt="سيدة تتعلم القيادة بثقة خلف المقود"
                 width="1024"
                 height="1536"
@@ -400,9 +391,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="gallery-item">
             <picture>
-              <source srcset="media/img3.webp" type="image/webp" />
+              <source srcset="media/img3-336w.webp 336w, media/img3-672w.webp 672w, media/img3.webp 816w" type="image/webp" sizes="(max-width: 768px) calc(100vw - 28px), (max-width: 992px) calc(50vw - 18px), calc(33vw - 24px)" />
               <img
                 src="media/img3.jpg"
+                srcset="media/img3-336w.webp 336w, media/img3-672w.webp 672w, media/img3.webp 816w"
                 alt="تدريب على الطريق السريعة"
                 width="816"
                 height="1224"
@@ -416,9 +408,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="gallery-item">
             <picture>
-              <source srcset="media/img2.webp" type="image/webp" />
+              <source srcset="media/img2-336w.webp 336w, media/img2-672w.webp 672w, media/img2.webp 816w" type="image/webp" sizes="(max-width: 768px) calc(100vw - 28px), (max-width: 992px) calc(50vw - 18px), calc(33vw - 24px)" />
               <img
                 src="media/img2.jpg"
+                srcset="media/img2-336w.webp 336w, media/img2-672w.webp 672w, media/img2.webp 816w"
                 alt="سيارة التدريب الحديثة"
                 width="816"
                 height="1224"
@@ -756,9 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <source srcset="media/app-store-qr.webp" type="image/webp" />
                   <img
                     src="media/app-store-qr.jpeg"
+                    srcset="media/app-store-qr.webp 320w"
                     alt="امسحي هذا الكود بكاميرا هاتفك لتحميل تطبيق دربيني من App Store"
-                    width="1024"
-                    height="1024"
+                    width="320"
+                    height="320"
                     loading="lazy"
                     decoding="async"
                   />
@@ -788,10 +782,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-inner">
         <img
           class="footer-logo-img"
-          src="media/Logo.gif"
+          src="media/hero-logo.webp"
+          srcset="media/hero-logo.webp 200w"
+          sizes="120px"
           alt="شعار دربيني"
-          width="1080"
-          height="1080"
+          width="120"
+          height="120"
           loading="lazy"
         />
         <p class="footer-tagline">منصة تعلم القيادة الأولى للمرأة السعودية</p>

@@ -9,25 +9,6 @@ function handleNavbar(scrollY) {
   });
 }
 
-let scrollLockY = 0;
-function lockBodyScroll(lock) {
-  if (lock) {
-    scrollLockY = window.scrollY;
-    document.body.style.top = -scrollLockY + "px";
-    document.body.style.position = "fixed";
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-  } else {
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-    window.scrollTo(0, scrollLockY);
-  }
-}
-
 function toggleMenu() {
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
@@ -38,11 +19,11 @@ function toggleMenu() {
   mobileMenu.classList.toggle("active");
 
   if (isOpening) {
-    lockBodyScroll(true);
+    document.body.style.overflow = "hidden";
     const firstLink = mobileMenu.querySelector("nav a");
     if (firstLink) firstLink.focus();
   } else {
-    lockBodyScroll(false);
+    document.body.style.overflow = "";
   }
 }
 
@@ -53,7 +34,7 @@ function closeMenu() {
   if (mobileMenu.classList.contains("active")) {
     hamburger.classList.remove("active");
     mobileMenu.classList.remove("active");
-    lockBodyScroll(false);
+    document.body.style.overflow = "";
   }
 }
 
